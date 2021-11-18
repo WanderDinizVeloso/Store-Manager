@@ -1,5 +1,7 @@
 const express = require('express');
 
+const { error } = require('./middlewares');
+
 const PORT = 3000;
 
 const app = express();
@@ -10,5 +12,7 @@ app.use(express.json());
 app.get('/', (_request, response) => {
   response.send();
 });
+
+app.use(error);
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
