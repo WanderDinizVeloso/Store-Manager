@@ -1,5 +1,6 @@
 const express = require('express');
 
+const root = require('./routers/root');
 const { error } = require('./middlewares');
 
 const PORT = 3000;
@@ -12,6 +13,8 @@ app.use(express.json());
 app.get('/', (_request, response) => {
   response.send();
 });
+
+app.use(root);
 
 app.use(error);
 
