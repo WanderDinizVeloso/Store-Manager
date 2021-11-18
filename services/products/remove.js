@@ -1,5 +1,5 @@
-const { dbReadById } = require('../../models/crudFunctions')('products');
+const { dbRemove } = require('../../models/crudFunctions')('products');
 
-const readById = async (id) => dbReadById(id);
+const remove = async (id) => dbRemove(id);
 
-module.exports = readById;
+module.exports = remove;
