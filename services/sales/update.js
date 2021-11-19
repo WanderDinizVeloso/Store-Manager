@@ -1,5 +1,5 @@
-const { dbUpdate } = require('../../models/crudFunctions')('products');
+const { dbUpdate } = require('../../models/crudFunctions')('sales');
 
-const update = async (product) => dbUpdate(product);
+const update = async (sale) => dbUpdate(sale);
 
 module.exports = update;
