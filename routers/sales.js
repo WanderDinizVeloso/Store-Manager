@@ -12,7 +12,7 @@ const {
   create,
   readAll,
   readById,
-  // update,
+  update,
   // remove,
 } = require('../controllers/sales');
 
@@ -30,8 +30,11 @@ router.post('/',
   wrapper(isValidProductIdSales),
   wrapper(create));
 
-// router.put('/:id',
-//   wrapper(update));
+router.put('/:id',
+  wrapper(isValidIdSales),
+  wrapper(isValidQuantSales),
+  wrapper(isValidProductIdSales),
+  wrapper(update));
 
 // router.delete('/:id',
 //   wrapper(remove));

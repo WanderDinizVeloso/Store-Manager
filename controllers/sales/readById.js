@@ -1,6 +1,6 @@
 const { StatusCodes } = require('http-status-codes');
 
-const { readById } = require('../../services/products');
+const { readById } = require('../../services/sales');
 const { isFound } = require('../../services/validations/auxFunctions');
 
 const readByIdSales = async (req, res, next) => {
