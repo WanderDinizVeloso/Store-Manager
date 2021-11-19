@@ -2,7 +2,10 @@ const express = require('express');
 
 const { wrapper } = require('../middlewares');
 
-const { isValidQuantSales } = require('../services/validations');
+const {
+  isValidQuantSales,
+  isValidProductIdSales,
+} = require('../services/validations');
 
 const {
   create,
@@ -22,6 +25,7 @@ const router = express.Router({ mergeParams: true });
 
 router.post('/',
   wrapper(isValidQuantSales),
+  wrapper(isValidProductIdSales),
   wrapper(create));
 
 // router.put('/:id',
