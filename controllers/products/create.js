@@ -1,8 +1,9 @@
 const { StatusCodes } = require('http-status-codes');
 
 const { create } = require('../../services/products');
+const { isExists } = require('../../services/validations/auxFunctions');
 
-const createProduct = async (req, res, _next) => {
+const createProduct = async (req, res, next) => {
   const { name, quantity } = req.body;
 
   const newProduct = {
@@ -11,6 +12,8 @@ const createProduct = async (req, res, _next) => {
   };
 
   const result = await create(newProduct);
+
+  if (result === 'existing record') return next(isExists('Product'));
 
   return res.status(StatusCodes.CREATED).json(result);
 };
