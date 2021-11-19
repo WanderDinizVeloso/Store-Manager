@@ -1,12 +1,12 @@
 const connection = require('../connection');
 
 const dbReadAll = async (collection) => {
-  const products = (await connection())
+  const entities = (await connection())
     .collection(collection)
     .find()
     .toArray();
 
-  return products;
+  return entities;
 };
 
 module.exports = dbReadAll;

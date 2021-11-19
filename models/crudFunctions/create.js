@@ -1,11 +1,11 @@
 const connection = require('../connection');
 
 const dbCreate = async (collection, entity) => {
-  const createProduct = (await connection())
+  const createEntity = (await connection())
     .collection(collection)
     .insertOne(entity);
 
-  return createProduct;
+  return createEntity;
 };
 
 module.exports = dbCreate;
