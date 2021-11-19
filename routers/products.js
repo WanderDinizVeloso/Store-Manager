@@ -28,6 +28,8 @@ router.post('/',
 
 router.put('/:id',
   wrapper(isValidId),
+  wrapper(isValidName),
+  wrapper(isValidQuantity),
   wrapper(update));
 
 router.delete('/:id',
