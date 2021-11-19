@@ -10,6 +10,8 @@ const {
   remove,
 } = require('../controllers/products');
 
+const { isValidName, isValidQuantity } = require('../services/validations');
+
 const router = express.Router({ mergeParams: true });
 
 router.get('/',
@@ -19,6 +21,8 @@ router.get('/:id',
   wrapper(readById));
 
 router.post('/',
+  wrapper(isValidName),
+  wrapper(isValidQuantity),
   wrapper(create));
 
 router.put('/:id',
