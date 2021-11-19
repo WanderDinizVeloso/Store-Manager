@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { wrapperOfMiddlewares } = require('../middlewares');
+const { wrapper } = require('../middlewares');
 
 const {
   create,
@@ -13,18 +13,18 @@ const {
 const router = express.Router({ mergeParams: true });
 
 router.get('/',
-  wrapperOfMiddlewares(readAll));
+  wrapper(readAll));
 
 router.get('/:id',
-  wrapperOfMiddlewares(readById));
+  wrapper(readById));
 
 router.post('/',
-  wrapperOfMiddlewares(create));
+  wrapper(create));
 
 router.put('/:id',
-  wrapperOfMiddlewares(update));
+  wrapper(update));
 
 router.delete('/:id',
-  wrapperOfMiddlewares(remove));
+  wrapper(remove));
 
 module.exports = router;
