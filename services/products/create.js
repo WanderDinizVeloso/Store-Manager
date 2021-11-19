@@ -7,7 +7,7 @@ const create = async (product) => {
 
   const searchProduct = products.filter((search) => search.name === product.name);
 
-  if (searchProduct.length > 0) return 'existing record';
+  if (searchProduct.length > 0) return null;
 
   const { ops } = (await dbCreate(product));
 

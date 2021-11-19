@@ -13,7 +13,7 @@ const createProduct = async (req, res, next) => {
 
   const result = await create(newProduct);
 
-  if (result === 'existing record') return next(isExists('Product'));
+  if (!result) return next(isExists('Product'));
 
   return res.status(StatusCodes.CREATED).json(result);
 };
