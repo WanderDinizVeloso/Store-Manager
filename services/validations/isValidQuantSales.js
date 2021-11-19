@@ -7,7 +7,7 @@ const isValidQuantSales = (req, _res, next) => {
     typeof quantity !== 'number'
     || quantity <= 0);
 
-  if (isQuantityCorrect === true) return next(isCorrectSale);
+  if (isQuantityCorrect) return next(isCorrectSale());
 
   next();
 };
