@@ -1,7 +1,9 @@
 const { dbCreate } = require('../../models/crudFunctions')('sales');
 
 const create = async (sales) => {
-  const { ops } = (await dbCreate(sales));
+  const saleList = { itensSold: sales };
+
+  const { ops } = (await dbCreate(saleList));
 
   return ops[0];
 };
