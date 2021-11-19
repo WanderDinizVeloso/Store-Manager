@@ -1,6 +1,7 @@
 const express = require('express');
 
 const { wrapper } = require('../middlewares');
+const { isValidIdSales } = require('../services/validations');
 
 const {
   isValidQuantSales,
@@ -10,7 +11,7 @@ const {
 const {
   create,
   readAll,
-  // readById,
+  readById,
   // update,
   // remove,
 } = require('../controllers/sales');
@@ -20,8 +21,9 @@ const router = express.Router({ mergeParams: true });
 router.get('/',
   wrapper(readAll));
 
-// router.get('/:id',
-//   wrapper(readById));
+router.get('/:id',
+  wrapper(isValidIdSales),
+  wrapper(readById));
 
 router.post('/',
   wrapper(isValidQuantSales),
