@@ -9,7 +9,7 @@ const {
 
 const {
   create,
-  // readAll,
+  readAll,
   // readById,
   // update,
   // remove,
@@ -17,8 +17,8 @@ const {
 
 const router = express.Router({ mergeParams: true });
 
-// router.get('/',
-//   wrapper(readAll));
+router.get('/',
+  wrapper(readAll));
 
 // router.get('/:id',
 //   wrapper(readById));
