@@ -1,5 +1,9 @@
 const { dbReadAll } = require('../../models/crudFunctions')('products');
 
-const readAll = async () => dbReadAll();
+const readAll = async () => {
+  const products = await dbReadAll();
+
+  return products;
+};
 
 module.exports = readAll;
