@@ -7,7 +7,7 @@ const createSale = async (req, res, _next) => {
 
   const result = await create(newSale);
 
-  return res.status(StatusCodes.CREATED).json(result);
+  return res.status(StatusCodes.OK).json(result);
 };
 
 module.exports = createSale;
