@@ -5,6 +5,7 @@ const isValidQuantSales = require('./isValidQuantSales');
 const isValidProductIdSales = require('./isValidProductIdSales');
 const isValidIdSales = require('./isValidIdSales');
 const isValidSaleId = require('./isValidSaleId');
+const isValidInventory = require('./isValidInventory');
 
 module.exports = {
   isValidName,
@@ -14,4 +15,5 @@ module.exports = {
   isValidProductIdSales,
   isValidIdSales,
   isValidSaleId,
+  isValidInventory,
 };

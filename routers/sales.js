@@ -1,7 +1,11 @@
 const express = require('express');
 
 const { wrapper } = require('../middlewares');
-const { isValidIdSales, isValidSaleId } = require('../services/validations');
+const {
+  isValidIdSales,
+  isValidSaleId,
+  isValidInventory,
+} = require('../services/validations');
 
 const {
   isValidQuantSales,
@@ -28,6 +32,7 @@ router.get('/:id',
 router.post('/',
   wrapper(isValidQuantSales),
   wrapper(isValidProductIdSales),
+  wrapper(isValidInventory),
   wrapper(create));
 
 router.put('/:id',
