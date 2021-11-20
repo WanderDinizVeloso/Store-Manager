@@ -4,6 +4,7 @@ const isValidId = require('./isValidId');
 const isValidQuantSales = require('./isValidQuantSales');
 const isValidProductIdSales = require('./isValidProductIdSales');
 const isValidIdSales = require('./isValidIdSales');
+const isValidSaleId = require('./isValidSaleId');
 
 module.exports = {
   isValidName,
@@ -12,4 +13,5 @@ module.exports = {
   isValidQuantSales,
   isValidProductIdSales,
   isValidIdSales,
+  isValidSaleId,
 };

@@ -1,7 +1,7 @@
 const express = require('express');
 
 const { wrapper } = require('../middlewares');
-const { isValidIdSales } = require('../services/validations');
+const { isValidIdSales, isValidSaleId } = require('../services/validations');
 
 const {
   isValidQuantSales,
@@ -13,7 +13,7 @@ const {
   readAll,
   readById,
   update,
-  // remove,
+  remove,
 } = require('../controllers/sales');
 
 const router = express.Router({ mergeParams: true });
@@ -36,7 +36,8 @@ router.put('/:id',
   wrapper(isValidProductIdSales),
   wrapper(update));
 
-// router.delete('/:id',
-//   wrapper(remove));
+router.delete('/:id',
+  wrapper(isValidSaleId),
+  wrapper(remove));
 
 module.exports = router;
