@@ -1,13 +1,11 @@
 const express = require('express');
 
 const { wrapper } = require('../middlewares');
+
 const {
   isValidIdSales,
   isValidSaleId,
   isValidInventory,
-} = require('../services/validations');
-
-const {
   isValidQuantSales,
   isValidProductIdSales,
 } = require('../services/validations');
