@@ -10,7 +10,11 @@ const {
   remove,
 } = require('../controllers/products');
 
-const { isValidName, isValidQuantity, isValidId } = require('../services/validations');
+const {
+  isValidName,
+  isValidQuantity,
+  isValidId,
+} = require('../services/validations');
 
 const router = express.Router({ mergeParams: true });
 
